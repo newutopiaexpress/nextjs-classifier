@@ -5,11 +5,11 @@ import Image from "next/image";
 export default async function Home() {
   const greeting = await getGreeting();
   return (
-    <main className="items-center min-h-screen">
+    <main className="content-center h-screen">
 
-      <div className="mx-auto md:w-1/2 grid grid-cols-6 py-6 md:py-9 lg:py-12">
+      <div className="mx-auto md:w-1/2 grid grid-cols-6">
 
-        <div className="col-span-6 mx-auto ml-0 mb-4 pt-9">
+        <div className=" col-span-6 mx-auto ml-0 mb-4 pt-9">
           <Image
                   alt="Image"
                   className="w-28 h-28 rounded-full"
