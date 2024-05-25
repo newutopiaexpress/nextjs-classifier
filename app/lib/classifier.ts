@@ -16,7 +16,7 @@ const getCompletion = async (file: File, stream = false) => {
         content: [
           {
             type: "text",
-            text: "Describe this image as if you were David Attenborough in less than 300 character. Provide as much detail as possible. ALWAYS use Hungarian language.",
+            text: "Describe this image as if you were David Attenborough. Provide as much detail as possible. ALWAYS use Hungarian language.",
           },
           {
             type: "image_url",
