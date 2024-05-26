@@ -28,7 +28,15 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="absolute top-4 left-4">
           <UtopiaIcon/>
-        </div>       
+        </div>
+        <div className="absolute top-4 right-4">
+          <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+          </SignedIn>  
+          </div>
         {children}
       </body>
     </html>

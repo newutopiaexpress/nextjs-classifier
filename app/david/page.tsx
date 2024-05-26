@@ -26,7 +26,9 @@ export default async function Page() {
         <div className="col-span-6">
           <p className="text-lg pb-8 italic">
             {greeting.replaceAll(/\"/g, "")}
+            <br/><span className="text-xs opacity-45">*AI-generated text in real time</span>
           </p>
+
         </div>
 
         <div className="col-span-6 mt-6 mb-6">
