@@ -3,6 +3,7 @@ import { getGreeting } from "./lib/messages";
 import ImageClassifier from "./ui/imageClassifier";
 import Image from "next/image";
 import Link from "next/link";
+import { SignIn } from "@clerk/nextjs";
 
 export default async function Page() {
   const greeting = await getGreeting();
