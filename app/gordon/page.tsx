@@ -1,8 +1,7 @@
 
-import { getGreeting } from "./lib/messages";
-import ImageClassifier from "./ui/imageClassifier";
+import { getGreeting } from "../lib/messagesgordon";
+import ImageClassifier from "../ui/imageClassifier";
 import Image from "next/image";
-import { SignInButton } from "@clerk/nextjs";
 
 export default async function Page() {
   const greeting = await getGreeting();
@@ -15,9 +14,9 @@ export default async function Page() {
           <Image
                   alt="Image"
                   className="w-28 h-28 rounded-full"
-                  src="/david.jpg"
-                  width= "223"
-                  height= "226"
+                  src="/gordon.jpg"
+                  width= "1200"
+                  height= "1200"
                   style={{
                   objectFit: "cover",
                   }}
@@ -25,15 +24,13 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6">
-          <p className="text-lg italic">
+          <p className="text-lg pb-8 italic">
             {greeting.replaceAll(/\"/g, "")}
           </p>
         </div>
 
-        <div className="col-span-6 mt-4 mb-6">
-          <SignInButton>
-            <button className="rounded-full border bg-green-200 border-green-300 px-4 py-2 text-sm">Start</button>
-          </SignInButton>
+        <div className="col-span-6 mt-6 mb-6">
+          <ImageClassifier />
         </div>
 
       </div>
