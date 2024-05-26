@@ -15,7 +15,7 @@ export default async function Page() {
           <Image
                   alt="Image"
                   className="w-28 h-28 rounded-full"
-                  src="/david.jpg"
+                  src="/gordon.jpg"
                   width= "223"
                   height= "226"
                   style={{
@@ -31,7 +31,7 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6 mt-4 mb-6">
-          <Link href="/david">
+          <Link href="/gordon">
             <button className="rounded-full border bg-green-200 border-green-300 px-4 py-2 text-sm">Start</button>
           </Link>
         </div>

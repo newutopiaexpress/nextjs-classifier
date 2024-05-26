@@ -109,7 +109,7 @@ export default function ImageClassifier() {
         </div>
 
         <p className="py-8 text-slate-800">
-          {submitted && !response ? "Kapcsolódás Sir Attenborogh-hoz..." : response}
+          {submitted && !response ? "Mr. Ramsay hívása..." : response}
         </p>
 
       </form>
