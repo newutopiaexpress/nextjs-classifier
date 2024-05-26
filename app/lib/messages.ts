@@ -10,8 +10,8 @@ export const getGreeting = async () => {
         content: [
           {
             type: "text",
-            text: `Introduce this concept in Hungarian language in less than 300 character AS if you were David Attenborogh narrating the beginning of a ducmentary:
-            An image classifier that describes your image in the voice of Sir David Attenborogh.
+            text: `Introduce this concept in Hungarian language in less than 300 character AS if you were the ruthless and raw Gordon Ramsay:
+            An image classifier that describes your image in the voice of Gordon Ramsay.
             `,
           },
         ],
