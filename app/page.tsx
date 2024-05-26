@@ -2,7 +2,7 @@
 import { getGreeting } from "./lib/messages";
 import ImageClassifier from "./ui/imageClassifier";
 import Image from "next/image";
-import { SignInButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default async function Page() {
   const greeting = await getGreeting();
@@ -31,9 +31,9 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6 mt-4 mb-6">
-          <SignInButton>
+          <Link href="/david">
             <button className="rounded-full border bg-green-200 border-green-300 px-4 py-2 text-sm">Start</button>
-          </SignInButton>
+          </Link>
         </div>
 
       </div>
