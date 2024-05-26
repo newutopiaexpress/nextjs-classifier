@@ -5,7 +5,7 @@ import Image from "next/image";
 export default async function Home() {
   const greeting = await getGreeting();
   return (
-    <main className="content-center h-screen">
+    <main className="content-center min-h-screen px-6 md:px-9">
 
       <div className="mx-auto md:w-1/2 grid grid-cols-6">
 
@@ -28,7 +28,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="col-span-6 mt-6 mb-9">
+        <div className="col-span-6 mt-6 mb-6">
           <ImageClassifier />
         </div>
 

@@ -83,11 +83,11 @@ export default function ImageClassifier() {
               />
           </div>
               
-          <div className="col-span-1 text-center">
+          <div className="col-span-1 text-left">
             <button
               className={`${
                 submitted || !file ? "opacity-50" : " hover:bg-gray-100"
-              } bg-green-300 hover:bg-green-300 mr-4 text-slate-700 hover:text-slate-600 font-semibold py-2 px-4 border border-green-400 rounded-full shadow`}
+              } bg-green-200 hover:bg-green-300 mr-4 text-slate-700 hover:text-slate-600 font-semibold py-2 px-4 border border-green-400 rounded-full shadow`}
               type="submit"
               disabled={submitted || !file}
             >
@@ -96,7 +96,7 @@ export default function ImageClassifier() {
           </div>
 
             
-          <div className="col-span-1 text-right">
+          <div className="col-span-1 text-left">
             <button
               className="rounded-full bg-white hover:bg-red-100 text-slate-400 hover:text-red-400 font-semibold py-2 px-4 border border-red-100 shadow"
               type="button"
