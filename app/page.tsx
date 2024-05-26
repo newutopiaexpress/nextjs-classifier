@@ -31,7 +31,7 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6 mt-4 mb-6">
-          <Link href="/david">
+          <Link href="https://skilled-tick-52.accounts.dev/sign-in">
             <button className="rounded-full border bg-green-200 border-green-300 px-4 py-2 text-sm">Start</button>
           </Link>
         </div>
