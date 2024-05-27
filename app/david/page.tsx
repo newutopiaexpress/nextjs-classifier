@@ -14,9 +14,9 @@ export default async function Page() {
           <Image
                   alt="Image"
                   className="w-28 h-28 rounded-full"
-                  src="/david.jpg"
-                  width= "223"
-                  height= "226"
+                  src="/gordon.jpg"
+                  width= "1200"
+                  height= "1200"
                   style={{
                   objectFit: "cover",
                   }}
