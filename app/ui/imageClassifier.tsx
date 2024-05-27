@@ -96,7 +96,7 @@ export default function ImageClassifier() {
           </div>
 
             
-          <div className="col-span-1 text-left">
+          <div className="col-span-1 text-right">
             <button
               className="rounded-full bg-white hover:bg-red-100 text-slate-400 hover:text-red-400 font-semibold py-2 px-4 border border-red-100 shadow"
               type="button"
