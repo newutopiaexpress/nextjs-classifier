@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { Input } from "@/components/ui/input";
+import LoadingSpinner from "@/components/ui/loadingSpinner";
 
 
 export default function ImageClassifier() {
@@ -61,55 +62,51 @@ export default function ImageClassifier() {
       <form onSubmit={onSubmit}>
 
 
-        <div className="mx-auto grid grid-cols-4">
+        <div className="transition-all w-36 grid grid-cols-3 gap-4 h-12 mx-auto ring-offset-1 ring-1 ring-stone-200/20 hover:ring-stone-100/60 rounded-full shadow-xl shadow-rose-800/10 hover:shadow-lg hover:shadow-green-800/20 bg-gradient-to-b from-stone-100 to-white">
 
-          <div className="col-span-2 text-left">
-              <input key={inputKey} type="file" id="file_input" className="block w-full text-sm text-slate-500
-                file:mr-4 file:py-2 file:px-4
-                file:rounded-full
-                file:text-sm file:font-semibold
-                file:bg-stone-800 file:text-stone-200 file:border file:border-stone-800
-                hover:file:bg-stone-800
-              "
-              onChange={(e) => {
-                if (e.target.files?.length) {
-                  setFile(e.target?.files[0]);
-                  setImage(URL.createObjectURL(e.target?.files[0]));
-                } else {
-                  setFile(null);
-                  setImage(null);
-                }
-              }}
-              />
+          <div className="p-2 place-self-center transition-all w-10 h-10 col-span-1 shadow-sm hover:shadow-md rounded-full border border-slate-500/20 bg-gradient-to-t from-stone-700 to-stone-600">
+            <UploadIcon/>
+            
+              <input key={inputKey} type="file" id="file_input" 
+                      className="collapse"
+                      onChange={(e) => {
+                        if (e.target.files?.length) {
+                          setFile(e.target?.files[0]);
+                          setImage(URL.createObjectURL(e.target?.files[0]));
+                        } else {
+                          setFile(null);
+                          setImage(null);
+                        }
+                      }}
+                      />
+
           </div>
               
-          <div className="col-span-1 text-left">
+          <div className="place-self-center transition-all w-10 h-10 shadow-sm hover:shadow-md rounded-full border border-slate-500/20 bg-transparent col-span-1 text-center items-center content-center bg-gradient-to-t from-green-50 to-lime-50 hover:from-green-200 hover:to-lime-200">
             <button
-              className={`${
-                submitted || !file ? "opacity-50" : " hover:bg-gray-100"
-              } bg-green-200 hover:bg-green-300 mr-4 text-slate-700 hover:text-slate-600 font-semibold py-2 px-4 border border-green-400 rounded-full shadow`}
+              className="text-lg text-slate-400 hover:text-slate-500"
               type="submit"
               disabled={submitted || !file}
             >
-            <EyeIcon/> Start
+            <EyeIcon/>
             </button>
           </div>
 
             
-          <div className="col-span-1 text-right">
+          <div className="place-self-center transition-all w-10 h-10 shadow-sm hover:shadow-md rounded-full border border-slate-500/20 col-span-1 text-center items-center content-center bg-gradient-to-t from-rose-50 to-pink-50 hover:from-rose-300 hover:to-pink-200">
             <button
-              className="rounded-full bg-white hover:bg-red-100 text-slate-400 hover:text-red-400 font-semibold py-2 px-4 border border-red-100 shadow"
+              className="text-lg text-slate-400 hover:text-slate-500"
               type="button"
               onClick={onReset}
             >
-              <ReloadIcon/> Új kép
+              <ReloadIcon/>
             </button>
           </div>    
             
         </div>
 
         <p className="py-8 text-slate-800">
-          {submitted && !response ? "Mr. Ramsay hívása..." : response}
+          {submitted && !response ? <LoadingSpinner /> : response}
         </p>
 
       </form>
@@ -117,18 +114,42 @@ export default function ImageClassifier() {
   );
 }
 
+function UploadIcon() {
+  return (
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mx-auto w-6 h-6 opacity-55 hover:opacity-65 text-slate-100">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+</svg>
+
+  )
+}
+
 
 function EyeIcon() {
   return (
-    <svg className="float-left mt-1 mr-2" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 11C4.80285 11 2.52952 9.62184 1.09622 7.50001C2.52952 5.37816 4.80285 4 7.5 4C10.1971 4 12.4705 5.37816 13.9038 7.50001C12.4705 9.62183 10.1971 11 7.5 11ZM7.5 3C4.30786 3 1.65639 4.70638 0.0760002 7.23501C-0.0253338 7.39715 -0.0253334 7.60288 0.0760014 7.76501C1.65639 10.2936 4.30786 12 7.5 12C10.6921 12 13.3436 10.2936 14.924 7.76501C15.0253 7.60288 15.0253 7.39715 14.924 7.23501C13.3436 4.70638 10.6921 3 7.5 3ZM7.5 9.5C8.60457 9.5 9.5 8.60457 9.5 7.5C9.5 6.39543 8.60457 5.5 7.5 5.5C6.39543 5.5 5.5 6.39543 5.5 7.5C5.5 8.60457 6.39543 9.5 7.5 9.5Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mx-auto w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+</svg>
+
   )
 }
 
 function ReloadIcon() {
   return (
-    <svg className="float-left mt-1 mr-2" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.84998 7.49998C1.84998 4.66458 4.05979 1.84998 7.49998 1.84998C10.2783 1.84998 11.6515 3.9064 12.2367 5H10.5C10.2239 5 10 5.22386 10 5.5C10 5.77614 10.2239 6 10.5 6H13.5C13.7761 6 14 5.77614 14 5.5V2.5C14 2.22386 13.7761 2 13.5 2C13.2239 2 13 2.22386 13 2.5V4.31318C12.2955 3.07126 10.6659 0.849976 7.49998 0.849976C3.43716 0.849976 0.849976 4.18537 0.849976 7.49998C0.849976 10.8146 3.43716 14.15 7.49998 14.15C9.44382 14.15 11.0622 13.3808 12.2145 12.2084C12.8315 11.5806 13.3133 10.839 13.6418 10.0407C13.7469 9.78536 13.6251 9.49315 13.3698 9.38806C13.1144 9.28296 12.8222 9.40478 12.7171 9.66014C12.4363 10.3425 12.0251 10.9745 11.5013 11.5074C10.5295 12.4963 9.16504 13.15 7.49998 13.15C4.05979 13.15 1.84998 10.3354 1.84998 7.49998Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mx-auto w-6 h-6 mt-1">
+  <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+</svg>
   )
 }
+
+function PhotoIcon() {
+  return (
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mt-1">
+  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+  <path fillRule="evenodd" d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clipRule="evenodd" />
+</svg>
+  )
+}
+
+
 
 
