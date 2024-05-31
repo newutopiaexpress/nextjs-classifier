@@ -64,18 +64,16 @@ export default function ImageClassifier() {
 
         <div className="transition-all w-full grid grid-cols-4 gap-4 h-10 mx-auto">
 
-          <input
+          <div className="col-span-2 h-10 ">
+              <input
                 key={inputKey}
                 type="file"
-                className="h-10 block col-span-2 text-sm file:text-sm 
+                className="text-slate-300 block text-sm file:text-sm 
                 file:me-4 file:py-2 file:px-4
-                file:rounded-full file:border
-                file:border-slate-300 file:text-slate-400 file:bg-transparent
-                hover:file:bg-red-600 
-                file:disabled:opacity-50 file:disabled:pointer-events-none
-                dark:text-neutral-500
-                dark:file:bg-blue-500
-                dark:hover:file:bg-blue-400"
+                file:rounded-full file:shadow-lg
+                file:border-0 file:text-slate-400 hover:text-slate-400 file:bg-transparent
+                border rounded-full hover:border-slate-400 border-slate-300 
+                file:disabled:opacity-50 file:disabled:pointer-events-none"
                 accept="image/jpeg"
                 onChange={(e) => {
                   if (e.target.files?.length) {
@@ -86,7 +84,8 @@ export default function ImageClassifier() {
                     setImage(null);
                   }
                 }}
-          />
+              />
+          </div>
           
               
           <div className="col-span-1 transition-all w-18 h-10 shadow-sm hover:shadow-md rounded-full bg-transparent text-center items-center content-center border  border-slate-100/0 hover:border hover:border-green-200">
@@ -114,7 +113,7 @@ export default function ImageClassifier() {
             
         </div>
 
-        <p className="py-8 text-slate-800">
+        <p className="text-lg italic py-8 text-slate-800">
           {submitted && !response ? <LoadingSpinner /> : response}
         </p>
 

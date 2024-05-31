@@ -1,7 +1,8 @@
 
-import { getGreeting } from "../lib/messagesgordon";
+import { getGreeting } from "../lib/messagewelcomegordon";
 import ImageClassifier from "../ui/imageClassifier";
 import Image from "next/image";
+
 
 export default async function Page() {
   const greeting = await getGreeting();
@@ -24,7 +25,7 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6">
-          <p className="text-2xl font-extrabold pb-8 italic">
+          <p className="text-lg  pb-8 italic">
             {greeting.replaceAll(/\"/g, "")}
           </p>
         </div>
@@ -32,6 +33,10 @@ export default async function Page() {
         <div className="col-span-6 mt-6 mb-6">
           <ImageClassifier />
         </div>
+
+      </div>
+
+      <div className='h-12 py-2'>
 
       </div>
 

@@ -26,10 +26,10 @@ export default function RootLayout({
   <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
-        <div className="absolute top-4 left-4">
+        <div className="fixed top-4 left-4">
           <UtopiaIcon/>
         </div>
-        <div className="absolute top-4 right-4">
+        <div className="fixed top-4 right-4">
           <SignedOut>
               <SignInButton />
             </SignedOut>
