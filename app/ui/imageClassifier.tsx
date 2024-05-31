@@ -69,8 +69,8 @@ export default function ImageClassifier() {
                 type="file"
                 className="h-10 block col-span-2 text-sm file:text-sm 
                 file:me-4 file:py-2 file:px-4
-                file:rounded-full file:border-0
-                file:bg-red-700 file:text-slate-200
+                file:rounded-full file:border
+                file:border-slate-300 file:text-slate-400 file:bg-transparent
                 hover:file:bg-red-600 
                 file:disabled:opacity-50 file:disabled:pointer-events-none
                 dark:text-neutral-500
