@@ -14,7 +14,7 @@ export default async function Page() {
           <Image
                   alt="Image"
                   className="w-28 h-28 rounded-full"
-                  src="/gordon.jpg"
+                  src="/david.jpg"
                   width= "1200"
                   height= "1200"
                   style={{
@@ -26,7 +26,6 @@ export default async function Page() {
         <div className="col-span-6">
           <p className="text-lg pb-8 italic">
             {greeting.replaceAll(/\"/g, "")}
-            <br/><span className="text-xs opacity-45">*AI-generated text in real time</span>
           </p>
 
         </div>
