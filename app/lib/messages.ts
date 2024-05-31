@@ -10,9 +10,7 @@ export const getGreeting = async () => {
         content: [
           {
             type: "text",
-            text: `Introduce this concept in Hungarian language in less than 300 character as if you were David Attenborogh narrating the beginning of a ducmentary:
-            An image classifier that describes your image in the voice of Sir David Attenborogh.
-            `,
+            text: `Describe in Hungarian language as if you were David Attenborogh in less than 300 characters: an animal gets to know a digital device with three buttons and should use the image upload button.`,
           },
         ],
       },
