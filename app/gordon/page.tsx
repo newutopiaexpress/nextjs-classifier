@@ -24,7 +24,7 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6">
-          <p className="text-lg pb-8 italic">
+          <p className="text-2xl font-extrabold pb-8 italic">
             {greeting.replaceAll(/\"/g, "")}
           </p>
         </div>

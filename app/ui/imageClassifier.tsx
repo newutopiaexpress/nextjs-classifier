@@ -62,44 +62,53 @@ export default function ImageClassifier() {
       <form onSubmit={onSubmit}>
 
 
-        <div className="transition-all w-36 grid grid-cols-3 gap-4 h-12 mx-auto ring-offset-1 ring-1 ring-stone-200/20 hover:ring-stone-100/60 rounded-full shadow-xl shadow-rose-800/10 hover:shadow-lg hover:shadow-green-800/20 bg-gradient-to-b from-stone-100 to-white">
+        <div className="transition-all w-full grid grid-cols-4 gap-4 h-10 mx-auto">
 
-          <div className="p-2 place-self-center transition-all w-10 h-10 col-span-1 shadow-sm hover:shadow-md rounded-full border border-slate-500/20 bg-gradient-to-t from-stone-700 to-stone-600">
-            <UploadIcon/>
-            
-              <input key={inputKey} type="file" id="file_input" 
-                      className="collapse"
-                      onChange={(e) => {
-                        if (e.target.files?.length) {
-                          setFile(e.target?.files[0]);
-                          setImage(URL.createObjectURL(e.target?.files[0]));
-                        } else {
-                          setFile(null);
-                          setImage(null);
-                        }
-                      }}
-                      />
-
-          </div>
+          <input
+                key={inputKey}
+                type="file"
+                className="h-10 block col-span-2 text-sm file:text-sm 
+                file:me-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:bg-red-700 file:text-slate-200
+                hover:file:bg-red-600 
+                file:disabled:opacity-50 file:disabled:pointer-events-none
+                dark:text-neutral-500
+                dark:file:bg-blue-500
+                dark:hover:file:bg-blue-400"
+                accept="image/jpeg"
+                onChange={(e) => {
+                  if (e.target.files?.length) {
+                    setFile(e.target?.files[0]);
+                    setImage(URL.createObjectURL(e.target?.files[0]));
+                  } else {
+                    setFile(null);
+                    setImage(null);
+                  }
+                }}
+          />
+          
               
-          <div className="place-self-center transition-all w-10 h-10 shadow-sm hover:shadow-md rounded-full border border-slate-500/20 bg-transparent col-span-1 text-center items-center content-center bg-gradient-to-t from-green-50 to-lime-50 hover:from-green-200 hover:to-lime-200">
+          <div className="col-span-1 transition-all w-18 h-10 shadow-sm hover:shadow-md rounded-full bg-transparent text-center items-center content-center border  border-slate-100/0 hover:border hover:border-green-200">
             <button
-              className="text-lg text-slate-400 hover:text-slate-500"
+              className="text-sm  text-slate-400 hover:text-slate-500"
               type="submit"
               disabled={submitted || !file}
             >
             <EyeIcon/>
+            Start
             </button>
           </div>
 
             
-          <div className="place-self-center transition-all w-10 h-10 shadow-sm hover:shadow-md rounded-full border border-slate-500/20 col-span-1 text-center items-center content-center bg-gradient-to-t from-rose-50 to-pink-50 hover:from-rose-300 hover:to-pink-200">
+          <div className=" transition-all w-18 h-10 py-2 shadow-sm hover:shadow-md rounded-full col-span-1 text-center items-center content-center border border-slate-100/0 hover:border hover:border-red-200">
             <button
-              className="text-lg text-slate-400 hover:text-slate-500"
+              className="text-sm  text-slate-400 hover:text-slate-500"
               type="button"
               onClick={onReset}
             >
               <ReloadIcon/>
+              Reset
             </button>
           </div>    
             
@@ -116,7 +125,7 @@ export default function ImageClassifier() {
 
 function UploadIcon() {
   return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mx-auto w-6 h-6 opacity-55 hover:opacity-65 text-slate-100">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="float-left w-6 h-6 opacity-55 hover:opacity-65 text-slate-100">
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
 </svg>
 
@@ -126,7 +135,7 @@ function UploadIcon() {
 
 function EyeIcon() {
   return (
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="mx-auto w-6 h-6">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="float-left mr-2 w-4 h-4">
   <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
 </svg>
 
@@ -135,7 +144,7 @@ function EyeIcon() {
 
 function ReloadIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mx-auto w-6 h-6 mt-1">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="float-left w-4 h-4 mr-2">
   <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
 </svg>
   )
