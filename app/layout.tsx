@@ -9,7 +9,7 @@ import {
   UserButton
 } from '@clerk/nextjs'
 import Link from 'next/link'
-
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +43,7 @@ export default function RootLayout({
         <div className="">
         {children}
         </div>
+        <Analytics/>
       </body>
     </html>
   </ClerkProvider>
