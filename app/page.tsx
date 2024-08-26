@@ -16,7 +16,7 @@ export default async function Page() {
           <p className="text-2xl text-stone-100 italic [text-shadow:_0_1px_0_rgb(0_0_0_/_60%)]">
             {greeting.replaceAll(/\"/g, "")}*
           </p>
-          <p className="text-xs text-stone-100/60">*AI generált szöveg</p>
+          <p className="text-xs text-stone-100/60">*Valós idejű AI generált szöveg</p>
         </div>
 
         <div className="col-span-6 mt-4 mb-6">
