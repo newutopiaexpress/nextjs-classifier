@@ -14,8 +14,8 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'narrated by Sir David Attenborough ',
-  description: 'Utopia Express',
+  title: 'Égesd magad Gordon Ramsay-vel!',
+  description: 'Tölts fel egy képet, és nézd meg, hogy mit szólna hozzá Gordon Ramsay!',
 }
 
 export default function RootLayout({
