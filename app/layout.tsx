@@ -8,6 +8,7 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import Link from 'next/link'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,7 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="fixed top-4 left-4">
-          <UtopiaIcon/>
+          <Link href="https://utopia.express" target="_blank">
+            <UtopiaIcon/>
+          </Link>
         </div>
         <div className="fixed top-4 right-4">
           <SignedOut>

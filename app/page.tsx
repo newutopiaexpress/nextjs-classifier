@@ -14,7 +14,7 @@ export default async function Page() {
 
         <div className=" col-span-6 mx-auto ml-0 mb-4 pt-9">
           <Image
-                  alt="Image"
+                  alt="Image gordon"
                   className="w-28 h-28 rounded-full"
                   src="/gordon.jpg"
                   width= "223"
