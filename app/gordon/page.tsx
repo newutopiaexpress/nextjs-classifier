@@ -7,7 +7,7 @@ import Image from "next/image";
 export default async function Page() {
   const greeting = await getGreeting();
   return (
-    <main className="content-center min-h-screen px-6 md:px-9">
+    <main className="content-center min-h-screen px-6 md:px-9  bg-stone-950 text-stone-200">
 
       <div className="mx-auto md:w-1/2 grid grid-cols-6">
 
@@ -25,12 +25,12 @@ export default async function Page() {
         </div>
 
         <div className="col-span-6">
-          <p className="text-lg  pb-8 italic">
+          <p className="text-lg  pb-8 italic text-stone-200">
             {greeting.replaceAll(/\"/g, "")}
           </p>
         </div>
 
-        <div className="col-span-6 mt-6 mb-6">
+        <div className="col-span-6 mt-6 mb-6 text-stone-200">
           <ImageClassifier />
         </div>
 

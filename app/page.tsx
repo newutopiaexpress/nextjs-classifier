@@ -8,32 +8,20 @@ import { SignIn } from "@clerk/nextjs";
 export default async function Page() {
   const greeting = await getGreeting();
   return (
-    <main className="content-center min-h-screen px-6 md:px-9">
+    <main className="bg-transparent content-center min-h-screen px-6 md:px-9 h-screen w-full bg-cover bg-fixed bg-[url('/gordonbig.png')]">
 
-      <div className="mx-auto md:w-1/2 grid grid-cols-6">
-
-        <div className=" col-span-6 mx-auto ml-0 mb-4 pt-9">
-          <Image
-                  alt="Image gordon"
-                  className="w-28 h-28 rounded-full"
-                  src="/gordon.jpg"
-                  width= "223"
-                  height= "226"
-                  style={{
-                  objectFit: "cover",
-                  }}
-          />
-        </div>
+      <div className="bg-transparent md:max-w-[400px] grid grid-cols-6">
 
         <div className="col-span-6">
-          <p className="text-lg italic">
-            {greeting.replaceAll(/\"/g, "")}
+          <p className="text-2xl text-stone-100 italic [text-shadow:_0_1px_0_rgb(0_0_0_/_60%)]">
+            {greeting.replaceAll(/\"/g, "")}*
           </p>
+          <p className="text-xs text-stone-100/60">*AI generált szöveg</p>
         </div>
 
         <div className="col-span-6 mt-4 mb-6">
           <Link href="/gordon">
-            <button className="rounded-full border bg-green-200 border-green-300 px-4 py-2 text-sm">Start</button>
+            <button className="rounded-full border bg-green-400 border-green-400 px-6 py-2 text-xl">Start</button>
           </Link>
         </div>
 

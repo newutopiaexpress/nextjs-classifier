@@ -27,20 +27,22 @@ export default function RootLayout({
   <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
-        <div className="fixed top-4 left-4">
-          <Link href="https://utopia.express" target="_blank">
-            <UtopiaIcon/>
-          </Link>
-        </div>
-        <div className="fixed top-4 right-4">
-          <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-          </SignedIn>  
-          </div>
+            <div className="fixed top-4 left-4">
+              <Link href="https://utopia.express" target="_blank">
+                <UtopiaIcon/>
+              </Link>
+            </div>
+            <div className="fixed top-4 right-4">
+              <SignedOut>
+                  <SignInButton />
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+              </SignedIn>  
+            </div>
+        <div className="">
         {children}
+        </div>
       </body>
     </html>
   </ClerkProvider>
