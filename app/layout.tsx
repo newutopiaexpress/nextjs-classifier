@@ -16,6 +16,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Égesd magad Gordon Ramsay-vel!',
   description: 'Tölts fel egy képet, és nézd meg, hogy mit szólna hozzá Gordon Ramsay!',
+  openGraph: {
+    images: ['/opengraph-image.png'],
+  },
 }
 
 export default function RootLayout({
