@@ -113,7 +113,7 @@ export default function ImageClassifier() {
             
         </div>
 
-        <p className="text-lg italic py-8 text-slate-800">
+        <p className="text-lg italic py-8 text-slate-300">
           {submitted && !response ? <LoadingSpinner /> : response}
         </p>
 
